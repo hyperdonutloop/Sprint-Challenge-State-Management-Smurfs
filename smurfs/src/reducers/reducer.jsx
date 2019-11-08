@@ -6,24 +6,25 @@ import {
 
 const initialState = {
   smurf: [],
-  error: '',
+  error: null,
   isFetching: false
 };
 
 function reducer(state = initialState, action) {
+  console.log('reducer', action)
   switch (action.type) {
     case FETCH_SMURF_LOADING:
       return {
         ...state,
         isFetching: true,
-        error: ''
+        error: null
       };
     case FETCH_SMURF_SUCCESS:
       return {
         ...state,
         smurf: action.payload,
         isFetching: false,
-        error: ''
+        error: null
       };
       case FETCH_SMURF_FAILED:
         return {
