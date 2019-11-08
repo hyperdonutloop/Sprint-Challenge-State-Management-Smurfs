@@ -1,7 +1,8 @@
 import { 
   FETCH_SMURF_LOADING, 
   FETCH_SMURF_SUCCESS, 
-  FETCH_SMURF_FAILED
+  FETCH_SMURF_FAILED,
+  GET_NEW_SMURF
 } from '../actions/index';
 
 const initialState = {
@@ -31,7 +32,11 @@ function reducer(state = initialState, action) {
           ...state,
           error: action.payload
         };
-
+      case GET_NEW_SMURF:
+        return {
+          ...state,
+          smurf: action.payload
+        }
     default:
       return state
   }
