@@ -20,6 +20,6 @@ export const addSmurfs = (newSmurf) => dispatch => {
   dispatch({type: GET_SMURF_LOADING});
   axios
     .post('http://localhost:3333/smurfs', newSmurf)
-    .then(response => console.log(response.data))
+    .then(response => dispatch({ type: GET_NEW_SMURF, payload: response.data}))
     .catch(error => console.log(error.response))
 }
