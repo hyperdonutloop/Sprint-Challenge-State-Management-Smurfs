@@ -23,10 +23,27 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+### Instead of having to ‘prop-drilling’ data is stored on a context object. This means that data can be retrieved from the context objects, not the props. Context helps to simplify state management. We use context when we have global data that a lot of components will share. 
+- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store 
+known as a 'single source of truth' in a redux application?
+
+### The store holds the state of the application. It is the single source of truth because this is the ONLY store where we store STATE for the whole application. 
+
+### ACTIONS: these are JS objects that describe WHAT happened. We dispatch these actions to our store whenever we want to update the state of the application. 
+
+### REDUCERS: These are pure functions that define HOW the app state changes. When we dispatch an action to our store, the action gets passed to the reducer. 
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+### Application state is GLOBAL and component state is LOCAL. Redux uses a STORE to hold application state. Component state lives within that component and can only b updated and passed down with props. 	
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+### A thunk is a function that is returned by another function. It has access to dispatch. It allows us to run an ASYNC function (API Call) inside the .then
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+### I don’t have one yet because this week has been HEAVY. 
 
 ## Project Set Up
 
