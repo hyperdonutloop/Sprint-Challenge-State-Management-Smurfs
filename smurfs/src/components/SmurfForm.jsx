@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 
 const SmurfForm = (props) => {
   const [values, setValues] = useState({
+    // id: props.smurfs[props.smurfs.length -1].id +1,
     name: '',
     age: '',
-    height: 0
+    height: ''
   })
 
   const handleChange = e => setValues({...values, [e.target.name]: e.target.value});
@@ -14,7 +15,7 @@ const SmurfForm = (props) => {
   const handleSubmit = async e => {
     e.preventDefault();
     await props.addSmurfs(values);
-    props.history.push('/');
+    
   }
 
   return (
